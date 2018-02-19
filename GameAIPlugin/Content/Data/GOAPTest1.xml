@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<GOAP name="GOAP_Test_1">
+  <VariableList> <!-- Variable List -->
+    <Variable id="EnemyInRange" key="0" let="200"></Variable> <!-- true: let; false: gt-->
+    <Variable id="EnemyLost" key="1"></Variable>
+    <Variable id="EnemyDead" key="2"></Variable>
+  </VariableList>
+
+  <ActionList> <!-- Action List -->
+    <Action id="Search" cost="1">
+      <Precondition id="EnemyLost" value="true"></Precondition>
+      <Effect id="EnemyLost" value="false"></Effect>
+    </Action>
+    <Action id="GoToEnemy" cost="1">
+      <Precondition id="EnemyLost" value="false"></Precondition>
+      <Precondition id="EnemyInRange" value="false"></Precondition>
+      <Effect id="EnemyInRange" value="true"></Effect>
+    </Action>
+    <Action id="Attack" cost="4">
+      <Precondition id="EnemyInRange" value="true"></Precondition>
+      <Precondition id="EnemyDead" value="false"></Precondition>
+      <Effect id="EnemyDead" value="true"></Effect>
+    </Action>
+  </ActionList>
+  
+  <InitialState> <!-- Initial world state -->
+    <Variable id="EnemyLost" value="true"></Variable>
+    <Variable id="EnemyInRange" value="false"></Variable>
+    <Variable id="EnemyDead" value="false"></Variable>
+  </InitialState>
+  
+  <GoalState> <!-- Goal world state -->
+    <Variable id="EnemyDead" value="true"></Variable>
+  </GoalState>
+</GOAP>

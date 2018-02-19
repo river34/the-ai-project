@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<fsm name="FSM_Test_2">
+    <state name="Patrol" initial="1">
+        <transition input="EnemySpotted" name="Attack" level="0"/>
+    </state>
+    <state name="Attack">
+        <transition input="EnemyLost" name="Search" level="0"/>
+    </state>
+    <state name="Search">
+        <transition input="EnemySpotted" name="Attack" level="0"/>
+    </state>
+</fsm>

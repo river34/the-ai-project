@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+
+<Utility name="Utility_Test_1">
+  <Action id="Attack">
+    <Consideration name="DistanceToEnemy">
+      <ResponseCurve type="Linear" slope="1" exponent="1" xshift="0" yshift="0"/>
+      <Input id="Distance"/>
+    </Consideration>
+    <Consideration name="EnemyHealth">
+      <ResponseCurve type="Linear" slope="1" exponent="1" xshift="0" yshift="0"/>
+      <Input id="EnemyHealth"/>
+    </Consideration>
+    <Consideration name="Health">
+      <ResponseCurve type="Linear" slope="1" exponent="1" xshift="0" yshift="0"/>
+      <Input id="Health"/>
+    </Consideration>
+  </Action>
+  <Action id="Run">
+    <Consideration name="Health">
+      <ResponseCurve type="Linear" slope="-1" exponent="1" xshift="0" yshift="1"/>
+      <Input id="Health"/>
+    </Consideration>
+  </Action>
+</Utility>

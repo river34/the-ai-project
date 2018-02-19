@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+
+<Utility name="Utility_Test_3">
+  <Action id="Investigate">
+    <Consideration name="NotSeeEnemy">
+      <ResponseCurve type="Step" slope="-1" exponent="1" xshift="0" yshift="1"/>
+      <Input id="SeeEnemy"/>
+    </Consideration>
+    <Consideration name="HaveLKP">
+      <ResponseCurve type="Step" slope="1" exponent="1" xshift="0" yshift="0"/>
+      <Input id="HaveLKP"/>
+    </Consideration>
+    <Consideration name="CoolDown">
+      <ResponseCurve type="Polynomial" slope="0.5" exponent="2" xshift="0" yshift="0"/>
+      <Input id="Time"/>
+    </Consideration>
+  </Action>
+
+  <Action id="MoveToEnemy">
+    <Consideration name="SeeEnemy">
+      <ResponseCurve type="Step" slope="1" exponent="1" xshift="0" yshift="0"/>
+      <Input id="SeeEnemy"/>
+    </Consideration>
+  </Action>
+
+  <Action id="Alert">
+    <Consideration name="HitByEnemy">
+      <ResponseCurve type="Polynomial" slope="-0.95" exponent="2" xshift="0" yshift="1"/>
+      <Input id="HitByEnemy"/>
+    </Consideration>
+  </Action>
+  
+  <Action id="Attack">
+    <Consideration name="HitByEnemy">
+      <ResponseCurve type="Polynomial" slope="-0.95" exponent="2" xshift="0" yshift="1"/>
+      <Input id="HitByEnemy"/>
+    </Consideration>
+    <Consideration name="NearEnemy">
+      <ResponseCurve type="Polynomial" slope="-0.95" exponent="2" xshift="0" yshift="1"/>
+      <Input id="Distance"/>
+    </Consideration>
+    <Consideration name="EnemyHealthIsLow">
+      <ResponseCurve type="Polynomial" slope="-0.5" exponent="4" xshift="0" yshift="1"/>
+      <Input id="EnemyHealth"/>
+    </Consideration>
+  </Action>
+  
+  <Action id="Search">
+    <Consideration name="NotSeeEnemy">
+      <ResponseCurve type="Step" slope="-0.1" exponent="1" xshift="0" yshift="0.1"/>
+      <Input id="SeeEnemy"/>
+    </Consideration>
+  </Action>
+  
+  <Action id="Run">
+    <Consideration name="HealthIsLow">
+      <ResponseCurve type="Polynomial" slope="0.5" exponent="4" xshift="0" yshift="0"/>
+      <Input id="Health"/>
+    </Consideration>
+    <Consideration name="NearEnemy">
+      <ResponseCurve type="Polynomial" slope="0.5" exponent="4" xshift="0" yshift="0"/>
+      <Input id="Distance"/>
+    </Consideration>
+  </Action>
+</Utility>

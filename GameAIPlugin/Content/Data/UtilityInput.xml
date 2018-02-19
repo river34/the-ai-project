@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+
+<UtilityInput>
+  <Input id="Distance" min="0" max="10000"/>
+  <Input id="EnemyHealth" min="0" max="100"/>
+  <Input id="Health" min="0" max="100"/>
+  <Input id="SeeEnemy" min="0" max="1"/>
+  <Input id="HitByEnemy" min="0" max="6"/>
+  <Input id="HaveLKP" min="0" max="1"/>
+  <Input id="Time" min="0" max="6"/>
+</UtilityInput>
